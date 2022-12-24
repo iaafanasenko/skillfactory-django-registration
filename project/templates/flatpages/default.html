@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <title>
+            Django. Flatpages - {% block title %}{{ flatpage.title }}{% endblock title %}
+        </title>
+
+        {% load static %}
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+            <div class="container">
+                <a class="navbar-brand" href="/pages">Django. Flatpages</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/contacts">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/font_tests">Font tests</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/registration_required">Registration required</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/page1">Page1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/page2">Page2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/page3">Page3</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    {% block content %}
+                    {{ flatpage.content }}
+                    {% endblock content %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
