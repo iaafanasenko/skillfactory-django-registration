@@ -1,0 +1,58 @@
+{% extends 'news/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+    Все статьи
+{% endblock title %}
+
+{% block content %}
+    <h1 class="page-header">Все статьи</h1>
+    <div class="posts-count">Количество доступных статей: {{ posts|length }}</div>
+
+    {% if posts %}
+        <div class="page-content">
+        <table class="posts-table">
+        <col style="width: 30%;">
+        <col style="width: 30%;">
+        <col style="width: 10%;">
+        <col style="width: 10%;">
+        <col style="width: 10%;">
+        <col style="width: 10%;">
+        <tr>
+            <th>Название</th>
+            <th>Начало текста</th>
+            <th>Автор</th>
+            <th>Категория</th>
+            <th>Рейтинг</th>
+            <th>Дата публикации</th>
+        </tr>
+
+        {% for post in posts %}
+            <tr>
+                <td>
+                    <a href="/news/{{ post.pk }}">{{ post.title|censor }}</a>
+                </td>
+                <td>{{ post.text|censor|truncatechars:20 }}</td>
+                <td>
+                    {{ post.author.user.username|title }}
+                </td>
+                <td>
+                    {% for category in post.category.all %}
+                        {{ category.name|title }}<br />
+                    {% endfor %}
+                </td>
+                <td>
+                    {{ post.rating }}
+                </td>
+                <td>{{ post.created_at|date:'d.m.Y' }}</td>
+            </tr>
+        {% endfor %}
+
+        </table>
+        </div>
+   {% else %}
+        <h2>Свежих статей нет.</h2>
+   {% endif %}
+
+{% endblock content %}

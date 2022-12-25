@@ -1,0 +1,65 @@
+body {
+    background-color: #F7F7F7;
+}
+
+.page-header {
+    font-weight: 700;
+    font-size: 32px;
+    text-align: left;
+    padding: 5px;
+    border-bottom: 3px #000000 solid;
+}
+
+.page-content {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.posts-count {
+    text-align: right;
+}
+
+.posts-table {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.posts-table th {
+    padding: 20px;
+    border-bottom: 1px #EEEEEE solid;
+    font-weight: 700;
+    text-align: center;
+}
+
+.posts-table td {
+    padding: 20px;
+    border-bottom: 1px #EEEEEE solid;
+    text-align: center;
+}
+
+.posts-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.post-header {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.post-text {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.post-date {
+    text-align: right;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.post-censor {
+    background-color: #F5C400;
+}
