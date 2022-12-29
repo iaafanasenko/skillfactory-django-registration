@@ -1,0 +1,47 @@
+{% extends 'news/default.html' %}
+
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block title %}
+    Удаление статьи
+{% endblock title %}
+
+{% block content %}
+<h1 class="page-header">Удаление статьи</h2>
+
+<div class="post-form">
+    <div>
+        <label>Автор</label>
+        <div class="post-text-block">{{ post.author.user.username|title }}</div>
+    </div>
+
+    <div>
+        <label>Заголовок</label>
+        <div class="post-text-block">{{ post.title|title|censor }}</div>
+    </div>
+
+    <div>
+        <label>Текст</label>
+        <div class="post-text-block">{{ post.text|title|censor }}</div>
+    </div>
+
+    <div>
+        <label>Категория</label>
+
+            {% for category in post.post_category.all %}
+                <span class="post-tag">{{ category.name|title}}</span>
+            {% endfor %}
+
+    </div>
+
+    <div>
+        <label>Дата публикации</label>
+        <div class="post-text-block">{{ post.created_at|date:'d.m.Y' }}</div>
+    </div>
+</div>
+
+<form method="POST" class="post-form">
+    {% csrf_token %}
+    <input type="submit" value="Подтвердить"></form>
+{% endblock content %}

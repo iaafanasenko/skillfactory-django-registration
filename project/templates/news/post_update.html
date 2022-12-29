@@ -1,0 +1,21 @@
+{% extends 'news/default.html' %}
+
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block title %}
+Изменение статьи
+{% endblock title %}
+
+{% block content %}
+<h1 class="page-header">Изменение статьи</h1>
+    <div class="page-content">
+        <div class="post-content">
+            <form method="POST" class="post-form">
+                {% csrf_token %}
+                {{ form.as_div }}
+                <input type="submit" value="Изменить статью">
+            </form>
+        </div>
+    </div>
+{% endblock content %}

@@ -47,7 +47,7 @@ class Category(models.Model):
     )
 
     def __str__(self):
-        return f'{self.pk}: {self.name}'
+        return f'{self.name}'
 
 
 class Post(models.Model):
@@ -85,7 +85,7 @@ class Post(models.Model):
         return f'{self.text}'
 
     def __str__(self):
-        return f'{self.pk}: {self.title}'
+        return f'{self.title}'
 
 
 class PostCategory(models.Model):
@@ -122,4 +122,4 @@ class Comment(models.Model):
         self.save()
 
     def __str__(self):
-        return f'{self.pk}: {self.text}'
+        return f'{self.text}'

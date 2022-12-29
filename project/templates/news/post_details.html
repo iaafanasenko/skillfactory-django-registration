@@ -3,14 +3,17 @@
 {% load custom_filters %}
 
 {% block title %}
-    Статья
+    Информация о статье
 {% endblock title %}
 
 {% block content %}
     <h1 class="page-header">Информация о статье</h1>
     <div class="page-content">
-        <div class="post-header">{{ post.title|censor }}</div>
-        <div class="post-text">{{ post.text|censor }}</div>
-        <div class="post-date">{{ post.created_at|date:'d.m.Y' }}</div>
+        <div class="post-content">
+            <div class="post-header">{{ post.title|censor }}</div>
+            <div class="post-text"><b>Автор:</b> {{ post.author.user.username|title }}</div>
+            <div class="post-text">{{ post.text|censor }}</div>
+            <div class="post-date">{{ post.created_at|date:'d.m.Y' }}</div>
+        </div>
     </div>
 {% endblock content %}

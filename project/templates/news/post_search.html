@@ -4,11 +4,18 @@
 {% load custom_tags %}
 
 {% block title %}
-    Все статьи
+    Поиск статей
 {% endblock title %}
 
 {% block content %}
-    <h1 class="page-header">Все статьи</h1>
+    <h1 class="page-header">Поиск статей</h1>
+
+    <div class="page-search">
+        <form method="GET" class="post-form">
+            {{ filterset.form.as_div }}
+            <input type="submit" value="Найти">
+        </form>
+    </div>
 
     {% if posts %}
         <div class="page-content">
@@ -45,7 +52,7 @@
                     {% endfor %}
                 </td>
                 <td>
-                    {{ post.rating }}
+                    {{ post.rating|title }}
                 </td>
                 <td>{{ post.created_at|date:'d.m.Y' }}</td>
                 <td><a href="/news/{{ post.pk }}/edit">Изменить</a></td>
@@ -80,7 +87,7 @@
 
 
    {% else %}
-        <div class="post-nothing">Свежих статей нет.</div>
+        <div class="post-nothing">Статей не найдено.</div>
    {% endif %}
 
 {% endblock content %}

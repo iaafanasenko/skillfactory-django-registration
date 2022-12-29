@@ -1,0 +1,21 @@
+{% extends 'news/default.html' %}
+
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block title %}
+Новая статья
+{% endblock title %}
+
+{% block content %}
+<h1 class="page-header">Новая статья</h1>
+    <div class="page-content">
+        <div class="post-content">
+            <form method="POST" class="post-form">
+                {% csrf_token %}
+                {{ form.as_div }}
+                <input type="submit" value="Добавить статью">
+            </form>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,5 +1,5 @@
 body {
-    background-color: #F7F7F7;
+    background-color: #F0EDED;
 }
 
 .page-header {
@@ -17,6 +17,12 @@ body {
 
 .posts-count {
     text-align: right;
+}
+
+.post-content {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .posts-table {
@@ -52,6 +58,7 @@ body {
     text-align: left;
     font-size: 16px;
     font-weight: 400;
+    margin: 20px 0 20px 0;
 }
 
 .post-date {
@@ -62,4 +69,128 @@ body {
 
 .post-censor {
     background-color: #F5C400;
+}
+
+.page-search {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.post-pagination {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.post-pagination li {
+    padding: 10px;
+    margin: 0 10px 0 10px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.post-pagination a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.post-pagination li.active_page {
+    background-color: #0083CA;
+    color: #FFFFFF;
+}
+
+div#id_title_filter {
+
+}
+
+div#id_post_category_filter, div#id_post_category, div#id_category, div#id_category_filter  {
+    display: flex;
+}
+
+div#id_date_filter {
+
+}
+
+.post-form > div {
+    text-align: left;
+    margin: 20px 0 20px 0;
+}
+
+.post-form label, legend {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.post-form input, select, textarea {
+    border: 1px #CCCCCC solid;
+    border-radius: 10px;
+    padding: 10px;
+    width: 70%;
+}
+
+.post-form input[type="submit"] {
+    margin: 20px 0;
+    width: 30%;
+    background-color: #0083CA;
+    color: #FFFFFF;
+}
+
+.post-text-block {
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+div#id_post_category_filter label {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 10px 0 10px;
+}
+
+div#id_category_filter label {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 10px 0 10px;
+}
+
+div#id_post_category label {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 10px 0 10px;
+}
+
+div#id_category label {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 10px 0 10px;
+}
+
+.post-nothing {
+    padding: 20px;
+    font-size: 16px;
+    text-align: left;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.post-tag {
+    background-color: #25C488;
+    color: #FFFFFF;
+    padding: 10px;
+    margin: 5px 0 5px 0;
+    border-radius: 30px;
 }
