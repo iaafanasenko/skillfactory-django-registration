@@ -1,0 +1,20 @@
+{% extends 'allauth/default.html' %}
+
+{% block title %}
+Авторизация
+{% endblock title %}
+
+{% block content %}
+    <h1 class="page-header">Авторизация</h1>
+    <div class="page-content">
+        <div class="post-content">
+        <div class="auth-link"><a href="/accounts/yandex/login/?process=login">Яндекс</a></div>
+            <form method="post" action="{% url 'login' %}" class="post-form">
+            {% csrf_token %}
+                {{ form.as_div }}
+                <input type="submit" value="login">
+                <input type="hidden" name="next" value="{{ next }}">
+            </form>
+        </div>
+    </div>
+{% endblock %}

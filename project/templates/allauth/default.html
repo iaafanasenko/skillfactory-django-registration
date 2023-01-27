@@ -30,26 +30,12 @@
                <div class="collapse navbar-collapse" id="navbarResponsive">
                    <ul class="navbar-nav ml-auto">
                        <li class="nav-item">
-                           <a class="nav-link" href="/news">Все статьи</a>
+                           <a class="nav-link" href="/accounts/login">Авторизация</a>
                        </li>
 
                        <li class="nav-item">
-                           <a class="nav-link" href="/news/search">Поиск статей</a>
+                           <a class="nav-link" href="/accounts/signup">Регистрация</a>
                        </li>
-
-                       {% if perms.app.add_post %}
-                           <li class="nav-item">
-                               <a class="nav-link" href="/news/create">+Создать статью</a>
-                           </li>
-                        {% endif %}
-
-                       {% if request.user.is_authenticated %}
-
-                        {% else %}
-                           <li class="nav-item">
-                               <a class="nav-link" href="/accounts/login">Авторизация / регистрация</a>
-                           </li>
-                        {% endif %}
                    </ul>
                </div>
            </div>

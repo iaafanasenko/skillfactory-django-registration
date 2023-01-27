@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
-from datetime import datetime
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.urls import reverse_lazy
 
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
@@ -42,13 +43,16 @@ class PostSearch(ListView):
         return context
 
 
-class PostCreate(CreateView):
+class PostCreate(PermissionRequiredMixin, CreateView):
+    permission_required = ('app.add_post',)
     template_name = 'news/post_create.html'
     form_class = PostForm
     success_url = '/news/'
+    raise_exception = True
 
 
-class PostUpdate(UpdateView):
+class PostUpdate(PermissionRequiredMixin, UpdateView):
+    permission_required = ('app.change_post',)
     template_name = 'news/post_update.html'
     form_class = PostForm
     success_url = '/news/'
@@ -58,7 +62,8 @@ class PostUpdate(UpdateView):
         return Post.objects.get(pk=id)
 
 
-class PostDelete(DeleteView):
+class PostDelete(PermissionRequiredMixin, DeleteView):
+    permission_required = ('app.delete_post',)
     template_name = 'news/post_delete.html'
     queryset = Post.objects.all()
     success_url = '/news/'

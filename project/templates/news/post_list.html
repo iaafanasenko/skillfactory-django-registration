@@ -48,8 +48,16 @@
                     {{ post.rating }}
                 </td>
                 <td>{{ post.created_at|date:'d.m.Y' }}</td>
-                <td><a href="/news/{{ post.pk }}/edit">Изменить</a></td>
-                <td><a href="/news/{{ post.pk }}/delete">Удалить</a></td>
+                <td>
+                    {% if perms.app.change_post %}
+                        <a href="/news/{{ post.pk }}/edit">Изменить</a>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if perms.app.delete_post %}
+                        <a href="/news/{{ post.pk }}/delete">Удалить</a>
+                    {% endif %}
+                </td>
             </tr>
         {% endfor %}
 
